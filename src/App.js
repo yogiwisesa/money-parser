@@ -139,12 +139,12 @@ export class App extends React.Component {
       <div className="App">
         {isModalShown && (
           <Modal>
-            <p style={{textAlign: 'center'}}>You're input isn't valid! 😢</p>
+            <p style={{textAlign: 'center'}}>You're input isn't valid! <span role="img" aria-label="sad">😢</span></p>
             <Button onClick={this.hideModal}>Close</Button>
           </Modal>
         )}
         <Card>
-          <h1>🤑 Money Parser</h1>
+          <h1><span role="img" aria-label="money">🤑</span> Money Parser</h1>
           <line />
           <input
             type="text"
@@ -155,7 +155,7 @@ export class App extends React.Component {
             value={textInput}
           />
           {!isInputValid && (
-            <p className="invalid-input-label">Your input isn't valid! 😢</p>
+            <p className="invalid-input-label">Your input isn't valid! <span role="img" aria-label="sad">😢</span></p>
           )}
           <p>
             {' '}
@@ -165,7 +165,7 @@ export class App extends React.Component {
           <Button onClick={this.handleSubmit}>Calculate</Button>
           <i>
             After finished your input, you can press the 'Calculate' button or
-            press enter. 👍
+            press enter. <span role="img" aria-label="thumb-up">👍</span>
           </i>
         </Card>{' '}
       </div>
