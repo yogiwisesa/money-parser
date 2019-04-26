@@ -139,12 +139,12 @@ export class App extends React.Component {
       <div className="App">
         {isModalShown && (
           <Modal>
-            <p style={{textAlign: 'center'}}>You're input isn't valid!</p>
+            <p style={{textAlign: 'center'}}>You're input isn't valid! 😢</p>
             <Button onClick={this.hideModal}>Close</Button>
           </Modal>
         )}
         <Card>
-          <h1>Money Parser</h1>
+          <h1>🤑 Money Parser</h1>
           <line />
           <input
             type="text"
@@ -155,17 +155,17 @@ export class App extends React.Component {
             value={textInput}
           />
           {!isInputValid && (
-            <p className="invalid-input-label">Your input isn't valid!</p>
+            <p className="invalid-input-label">Your input isn't valid! 😢</p>
           )}
           <p>
             {' '}
-            Denominations for {textInput ? textInput : '-'}{' '}
+            💸 Denominations for {textInput ? textInput : '-'}{' '}
             <b>{denominations}</b>
           </p>
           <Button onClick={this.handleSubmit}>Calculate</Button>
           <i>
             After finished your input, you can press the 'Calculate' button or
-            press enter.
+            press enter. 👍
           </i>
         </Card>{' '}
       </div>
