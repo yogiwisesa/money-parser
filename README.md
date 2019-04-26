@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How to run:
+1. `npm install`
+2. `npm start`
+3. New tab will be opened. If not, open [http://localhost:3000](http://localhost:3000)
+4. Type in the text input with any rupiah value
+5. Input text border will become red if the input value isn't valid
+6. If the input valid you can press enter or click the calculate button to see the denominations
+
 ## Available Scripts
 
 In the project directory, you can run:
