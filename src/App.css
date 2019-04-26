@@ -12,13 +12,6 @@
   font-family: 'open sans', 'tahoma', sans-serif;
 }
 
-.Card {
-  display: grid;
-  border: solid 1px var(--color-gray);
-  padding: var(--size-s);
-  margin: var(--size-s);
-}
-
 h1 {
   text-align: center;
 }
@@ -42,15 +35,6 @@ line {
 
 .Card .invalid-input-label {
   color: var(--color-red);
-}
-
-.Card button {
-  background: var(--color-primary);
-  border: 1px solid var(--color-primary);
-  border-radius: var(--size-s);
-  padding: var(--size-xs);
-  color: white;
-  cursor: pointer;
 }
 
 .Card button:hover {

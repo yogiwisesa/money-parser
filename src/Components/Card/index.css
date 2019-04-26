@@ -1,0 +1,8 @@
+.Card {
+  display: grid;
+  background: white;
+  border: solid 1px var(--color-gray);
+  border-radius: var(--size-xs);
+  padding: var(--size-s);
+  margin: var(--size-s);
+}

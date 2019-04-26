@@ -1,0 +1,15 @@
+.Modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.Modal .Card {
+  width: 500px;
+  height: 200px;
+}

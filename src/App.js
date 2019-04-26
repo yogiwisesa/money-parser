@@ -1,11 +1,15 @@
 import React from 'react';
+import Button from './Components/Button';
+import Card from './Components/Card';
+import Modal from './Components/Modal';
 import './App.css';
 
 export class App extends React.Component {
   state = {
     textInput: '',
     isInputValid: true,
-    denominations: ''
+    denominations: '',
+    isModalShown: false
   };
 
   /**
@@ -39,6 +43,10 @@ export class App extends React.Component {
         this.setState({
           denominations
         });
+      } else {
+        this.setState({
+          isModalShown: true,
+        })
       }
     }
   };
@@ -115,11 +123,27 @@ export class App extends React.Component {
     return converted;
   }
 
+  /**
+   * Set isModalShown state to hide the modal
+   */
+
+   hideModal = () => {
+     this.setState({
+       isModalShown: false
+     })
+   }
+
   render() {
-    const { isInputValid, denominations, textInput } = this.state;
+    const { isInputValid, denominations, textInput, isModalShown } = this.state;
     return (
       <div className="App">
-        <div className="Card">
+        {isModalShown && (
+          <Modal>
+            <p style={{textAlign: 'center'}}>You're input isn't valid!</p>
+            <Button onClick={this.hideModal}>Close</Button>
+          </Modal>
+        )}
+        <Card>
           <h1>Money Parser</h1>
           <line />
           <input
@@ -130,17 +154,20 @@ export class App extends React.Component {
             onKeyDown={this.handleSubmit}
             value={textInput}
           />
-          {!isInputValid && <p className="invalid-input-label">Your input isn't valid!</p>}
+          {!isInputValid && (
+            <p className="invalid-input-label">Your input isn't valid!</p>
+          )}
           <p>
             {' '}
-            Denominations for {textInput ? textInput : '-'} <b>{denominations}</b>
+            Denominations for {textInput ? textInput : '-'}{' '}
+            <b>{denominations}</b>
           </p>
-          <button onClick={this.handleSubmit}>Calculate</button>
+          <Button onClick={this.handleSubmit}>Calculate</Button>
           <i>
             After finished your input, you can press the 'Calculate' button or
             press enter.
           </i>
-        </div>
+        </Card>{' '}
       </div>
     );
   }

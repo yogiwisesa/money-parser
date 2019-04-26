@@ -1,5 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import Card from './Components/Card';
+import Button from './Components/Button';
+import Modal from './Components/Modal';
 import App from './App';
 
 let wrapper;
@@ -8,9 +11,14 @@ beforeEach(() => {
 });
 
 it('Renders all components correctly', () => {
+  wrapper.setState({
+    isModalShown: true
+  });
+
   expect(wrapper.find('input').length).toEqual(1);
-  expect(wrapper.find('p').length).toEqual(1);
-  expect(wrapper.find('button').length).toEqual(1);
+  expect(wrapper.find(Button).length).toEqual(2);
+  expect(wrapper.find(Card).length).toEqual(1);
+  expect(wrapper.find(Modal).length).toEqual(1);
 });
 
 /**
@@ -46,12 +54,17 @@ const testCalculate = (input, inputValid, denominations, key) => {
     if (key === 'enter') {
       inputText.simulate('keyDown', mockEventEnter);
     } else {
-      const button = wrapper.find('button');
+      const button = wrapper.find(Button);
       button.simulate('click', mockEventClick);
     }
 
     expect(wrapper.state('isInputValid')).toEqual(inputValid);
     expect(wrapper.state('denominations')).toContain(denominations);
+
+    if (!inputValid) {
+      // Expect the modal is shown
+      expect(wrapper.state('isModalShown')).toEqual(true);
+    }
 
     expect(wrapper.find('b').text()).toContain(denominations);
   });
