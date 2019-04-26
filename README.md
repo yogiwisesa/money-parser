@@ -16,6 +16,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 2.B. `npm test` or `npm test TEST_FILE_NAME` to run unit tests
+
+## Demo
 Up and running demo: [Now](https://money-parser.yogiwisesa.now.sh)
 
 
