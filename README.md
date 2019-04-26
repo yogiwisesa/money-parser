@@ -2,12 +2,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## How to run:
 1. `npm install`
-2. `npm start`
+
+2.A. `npm start`
 3. New tab will be opened. If not, open [http://localhost:3000](http://localhost:3000)
 4. Type in the text input with any rupiah value
-5. Input text border will become red if the input value isn't valid
+5. Input text border will become red if the input value isn't valid, and you can't calculate the denomination and a modal will be shown
 6. If the input valid you can press enter or click the calculate button to see the denominations
 
+2.B. `npm test` or `npm test TEST_FILE_NAME` to run unit tests
+Up and running demo: [Now](https://money-parser.yogiwisesa.now.sh)
 ## Available Scripts
 
 In the project directory, you can run:
